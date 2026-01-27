@@ -13,6 +13,68 @@ body, html {
 }
 
 
+/*********************************************************/
+/*Navigation                                            */
+/*******************************************************/
+nav {
+    position: fixed;
+    bottom: 15px;
+
+    width: 90%; /* 90% breedte van het scherm */
+    left: 50%; /* beginpunt in het midden van scherm */
+    transform: translateX(-50%); /* centeren horizontaal */
+
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* items horizontaal centreren */
+    align-items: center; /* items verticaal centreren */
+
+    z-index: 1000;
+
+    border: 1px solid #ccc;
+    border-radius: 50px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 80px;
+  }
+
+  nav li {
+    list-style: none;
+    margin: 0 10px;
+  }
+
+  nav li a {
+    text-decoration: none;
+  }
+
+  .nav__link {
+    color: #aaa;
+    transition: color 0.2s;
+  }
+
+  .nav__link.active {
+    color: #2563eb;
+    transform: scale(1.2);
+  }
+
+  .nav__link i {
+    font-size: 30px;
+  }
+
+/*********************************************************/
+/*Home map                                              */
+/*******************************************************/
 section {
   height: 100vh;
 }
@@ -96,23 +158,25 @@ h1 {
 
 
 
+
+
+
 /*********************************************************/
 /*EventCards                                            */
 /*******************************************************/
 #eventCards {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    max-height: 70vh;
+    height: calc(100vh - 100px);
+
+    max-height: calc(100vh - 220px); /* 80 + 60 */
     overflow-y: auto;
 
     scrollbar-width: thin;
     scrollbar-color: #2563eb #111;
     transition: max-height 0.4s ease-in-out;
-        
-    
 }
 
 .routes-container::-webkit-scrollbar {
