@@ -1,0 +1,33 @@
+<nav class="nav">
+  <ul class="nav__list">
+    <li>
+      <a href="#home" class="nav__link">
+        <i class="ri-earth-line"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#events" class="nav__link">
+        <i class="ri-calendar-event-fill"></i
+      ></a>
+    </li>
+    <li>
+      <a href="#account" class="nav__link">
+        <i class="ri-user-line"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  const links = document.querySelectorAll(".nav__link");
+
+  function setActive() {
+    const hash = window.location.hash || "#home";
+    links.forEach((l) => {
+      l.classList.toggle("active", l.getAttribute("href") === hash);
+    });
+  }
+
+  setActive();
+  window.addEventListener("hashchange", setActive);
+</script>

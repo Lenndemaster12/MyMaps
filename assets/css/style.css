@@ -1,0 +1,303 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+    background-color: #333;
+
+}
+
+body, html {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/*********************************************************/
+/*Navigation                                            */
+/*******************************************************/
+nav {
+    position: fixed;
+    bottom: 15px;
+
+    width: 90%; /* 90% breedte van het scherm */
+    left: 50%; /* beginpunt in het midden van scherm */
+    transform: translateX(-50%); /* centeren horizontaal */
+
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* items horizontaal centreren */
+    align-items: center; /* items verticaal centreren */
+
+    z-index: 1000;
+
+    border: 1px solid #ccc;
+    border-radius: 50px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 80px;
+  }
+
+  nav li {
+    list-style: none;
+    margin: 0 10px;
+  }
+
+  nav li a {
+    text-decoration: none;
+  }
+
+  .nav__link {
+    color: #aaa;
+    transition: color 0.2s;
+  }
+
+  .nav__link.active {
+    color: #2563eb;
+    transform: scale(1.2);
+  }
+
+  .nav__link i {
+    font-size: 30px;
+  }
+
+/*********************************************************/
+/*Home map                                              */
+/*******************************************************/
+section {
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+#map {
+  width: 100%;
+  height: 100vh; /* of 100vh voor fullscreen */
+}
+
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+    border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+.maplibregl-popup-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.maplibregl-popup-close-button {
+    color: red;
+    font-size: 26px;
+}
+
+
+/*********************************************************/
+/*Route dialog                                          */
+/*******************************************************/
+.routeDialog {
+    background-color: rgba(0, 0, 0, 0.5);
+    display:none; 
+    position:fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    justify-content:center; 
+    align-items:center; 
+    z-index:1000;
+}
+
+.routeDialog button{
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    width: 120px;
+    height: 30px;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 10px
+}
+
+.routeDialog #routeCancel{
+    background-color: darkred;
+}
+
+.routeDialogMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: hsl(225, 12%, 12%);
+    padding:20px; 
+    border-radius:8px; 
+    text-align:center; 
+    min-width:200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************/
+/*EventCards                                            */
+/*******************************************************/
+#eventCards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(100vh - 100px);
+
+    max-height: calc(100vh - 220px); /* 80 + 60 */
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #2563eb #111;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.routes-container::-webkit-scrollbar {
+    width: 6px; /* Chrome/Safari */
+}
+
+.routes-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3); 
+    border-radius: 3px;
+}
+
+.route-card {
+    position: relative;
+    background-color: #111;
+    /* donkere achtergrond voor mobiel */
+    color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-family: sans-serif;
+}
+
+.route-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.route-card p {
+    margin: 0.25rem 0;
+}
+
+.route-card {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.route-card .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* ruimte tussen knoppen */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    align-items: flex-end; /* knoppen rechts uitlijnen */
+}
+
+.route-card .buttons-container button {
+    padding: 0.1rem 0.5rem;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.route-card .buttons-container #openRoute {
+    height: 70px;
+}
+
+
+.route-card .buttons-container button i {
+    font-size: 16px;
+}
+
+
+
+.route-card button:hover {
+    background-color: #1e4bb8;
+}
+
+.routename {
+    font-size: 10px;
+    color: lightgray;
+}
+
+/* Event label boven titel toevoegen */
+.route-card .event-label {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block; /* naast elkaar blijven */
+    margin-right: 4px;      /* ruimte tussen labels */
+    margin-bottom: 4px;     /* ruimte tussen label en titel */
+    text-transform: uppercase;
+    white-space: nowrap;    /* voorkomt dat ze onder elkaar breken */
+}
+
+
+.route-card .event-label.selectie {
+    color: #2563eb; /* blauw */
+    border: 1px solid #2563eb;
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.route-card .event-label.vip {
+    color: gold;
+    border: 1px solid gold;
+    background-color: rgba(255, 215, 0, 0.15);
+}
+
+
+
+/*********************************************************/
+/*Search                                                */
+/*******************************************************/
+#search-input {
+    width: 60%;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 10px auto;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+}
