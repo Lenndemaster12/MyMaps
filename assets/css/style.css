@@ -207,20 +207,49 @@ h1 {
     margin: 0.25rem 0;
 }
 
-.route-card button {
+.route-card {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.route-card .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* ruimte tussen knoppen */
     position: absolute;
     bottom: 10px;
     right: 10px;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
+    align-items: flex-end; /* knoppen rechts uitlijnen */
+}
+
+.route-card .buttons-container button {
+    padding: 0.1rem 0.5rem;
     background-color: #2563eb;
     color: #fff;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 10px
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    height: 30px;
 }
+
+.route-card .buttons-container #openRoute {
+    height: 70px;
+}
+
+
+.route-card .buttons-container button i {
+    font-size: 16px;
+}
+
 
 
 .route-card button:hover {
@@ -231,6 +260,33 @@ h1 {
     font-size: 10px;
     color: lightgray;
 }
+
+/* Event label boven titel toevoegen */
+.route-card .event-label {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block; /* naast elkaar blijven */
+    margin-right: 4px;      /* ruimte tussen labels */
+    margin-bottom: 4px;     /* ruimte tussen label en titel */
+    text-transform: uppercase;
+    white-space: nowrap;    /* voorkomt dat ze onder elkaar breken */
+}
+
+
+.route-card .event-label.selectie {
+    color: #2563eb; /* blauw */
+    border: 1px solid #2563eb;
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.route-card .event-label.vip {
+    color: gold;
+    border: 1px solid gold;
+    background-color: rgba(255, 215, 0, 0.15);
+}
+
 
 
 /*********************************************************/
@@ -244,5 +300,4 @@ h1 {
     display: flex;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: darkgray;
 }

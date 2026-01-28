@@ -24,3 +24,5 @@ map.addControl(new maplibregl.NavigationControl());
 setTimeout(() => map.resize(), 300);
 window.addEventListener("resize", () => map.resize());
 window.addEventListener("orientationchange", () => setTimeout(() => map.resize(), 300));
+
+

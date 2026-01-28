@@ -1,7 +1,7 @@
 // Wacht tot DOM volledig geladen is
 document.addEventListener("DOMContentLoaded", () => {
   // CSV pad
-  const csvFile = "api/events.csv";
+  const csvFile = "../../api/events_geocoded.csv";
 
   Papa.parse(csvFile, {
     download: true,
